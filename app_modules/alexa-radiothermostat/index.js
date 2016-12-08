@@ -134,7 +134,7 @@ thermostatApp.intent('decTemp', function(req, res) {
 // process launch request when no utterances detected
 thermostatApp.launch(function(req, res) {
   console.log('REQUEST', JSON.stringify(req));
-  res.say("You can say, what is the temperature, set heat to 75, turn hold on, turn hold off. Have fun!");
+  res.say("You can say, what is the temperature, set heat to 75, turn hold on, turn hold off.");
 });
 
 module.exports = function(cb) {
