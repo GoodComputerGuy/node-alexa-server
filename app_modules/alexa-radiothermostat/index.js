@@ -12,7 +12,7 @@ thermostatApp.intent('setHeat', function(req, res) {
 });
 
 thermostatApp.intent('setTemp', function(req, res) {
-  request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {t_cool: parseFloat(req.slot('setTemperature'))}});
+  request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {t_heat: parseFloat(req.slot('setTemperature'))}});
   res.card("Thermostat Skill","Thermostat is set to " + parseInt(req.slot('setTemperature')) + " degrees");
   res.say("Thermostat is set to " + parseInt(req.slot('setTemperature')) + " degrees");
 });
