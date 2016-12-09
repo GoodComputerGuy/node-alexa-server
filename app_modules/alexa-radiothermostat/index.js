@@ -11,28 +11,16 @@ thermostatApp.intent('setHeat', function(req, res) {
   res.say("Thermostat heat mode is set to " + parseInt(req.slot('setHeating')) + " degrees");
 });
 
-thermostatApp.intent('setCool', function(req, res) {
-  request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {t_cool: parseFloat(req.slot('setCooling'))}});
-  res.card("Thermostat Skill","Thermostat cool mode is set to " + parseInt(req.slot('setCooling')) + " degrees");
-  res.say("Thermostat cool mode is set to " + parseInt(req.slot('setCooling')) + " degrees");
+thermostatApp.intent('setTemp', function(req, res) {
+  request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {t_cool: parseFloat(req.slot('setTemperature'))}});
+  res.card("Thermostat Skill","Thermostat is set to " + parseInt(req.slot('setTemperature')) + " degrees");
+  res.say("Thermostat is set to " + parseInt(req.slot('setTemperature')) + " degrees");
 });
 
 thermostatApp.intent('setOff', function(req, res) {
   request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {"tmode": 0}});
   res.card("Thermostat Skill","Thermostat is set to off");
   res.say("Thermostat is set to off");
-});
-
-thermostatApp.intent('setFanOn', function(req, res) {
-  request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {"fmode": 2}});
-  res.card("Thermostat Skill","Thermostat fan is set to on");
-  res.say("Thermostat fan is set to on");
-});
-
-thermostatApp.intent('setFanAuto', function(req, res) {
-  request.post(process.env.THERMOSTAT_URL + '/tstat', {json: {"fmode": 0}});
-  res.card("Thermostat Skill","Thermostat fan is set to auto");
-  res.say("Thermostat fan is set to auto");
 });
 
 thermostatApp.intent('setHoldOn', function(req, res) {
