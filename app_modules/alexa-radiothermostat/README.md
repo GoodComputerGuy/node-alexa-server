@@ -9,7 +9,7 @@ This is a module for [node-alexa-server](https://github.com/bbrookfield/node-ale
 4. Setup your Alexa skill
 5. Configure your intents
   
-  ```
+```
 {
 "intents": [
 	{
@@ -58,9 +58,10 @@ This is a module for [node-alexa-server](https://github.com/bbrookfield/node-ale
 	}
  ]
 }
+'''
+
 6. Configure your utterances
 
-  ```
 setOff turn off thermostat
 setOff turn off the thermostat
 setOff set thermostat to off
@@ -86,4 +87,3 @@ getTemp what's the temperature
 getTemp say the temperature
 getTemp tell me the temperature
 getTemp tell me temperature
-```
